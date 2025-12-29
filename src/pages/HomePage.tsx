@@ -11,25 +11,32 @@ import {
   Trophy,
 } from "lucide-react";
 import { BottomNavBar } from "@/components/BottomNavBar";
-const gradientBackground = ["gradient-purple", "gradient-green", "gradient-pink-dark", "gradient-casino"];
+const gradientBackground = ["gradient-casino", "gradient-dark", "gradient-purple", "gradient-green-dark", "gradient-pink-dark", "gradient-blue"];
 export default function HomePage() {
   return (
     <>
       <TopBar />
-      <div className="mobile-container px-4 py-4 pb-2  space-y-10">
+      <div className="mobile-container px-2 py-2 pb-2  space-y-10">
 
 
 
         {/* LIVE AUCTIONS */}
-        <section>
+        <section className="
+  rounded-3xl
+  p-2
+  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             🔥 Live Auctions
           </h2> */}
 
-          <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-light-header custom-header mb-4">
-            <Flame className="h-5 w-5 text-primary" />
-            Live Auctions
-          </h2>
+          <div className="py-2 mb-4 w-full mx-auto rounded-lg
+    bg-[linear-gradient(135deg,#d4d4d4_0%,#e4e4e4_30%,#ffffff_55%,#e0e0e0_75%,#dcdcdc_100%)]
+    shadow-[0_2px_6px_rgba(0,0,0,0.15)] ">
+            <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-pink-purple">
+              <Flame className="h-5 w-5 text-primary" />
+              Live Auctions
+            </h2>
+          </div>
 
           {/* TWO BIDS PER ROW */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -40,16 +47,23 @@ export default function HomePage() {
         </section>
 
         {/* HERO VIDEO */}
-        <section>
+        <section className="
+  rounded-3xl
+  p-2
+  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             <PlayCircle className="h-5 w-5 text-primary" />
             ⚡ How to Play
           </h2> */}
-          <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-light-header custom-header mb-4">
-            <PlayCircle className="h-5 w-5 text-primary" />
-            How to Play
-          </h2>
-          <section className="rounded-2xl overflow-hidden  card-shadow transparent">
+          <div className="bg-pink-100 py-2 mb-4 w-full mx-auto rounded-lg bg-[linear-gradient(135deg,#d4d4d4_0%,#e4e4e4_30%,#ffffff_55%,#e0e0e0_75%,#dcdcdc_100%)]
+    shadow-[0_2px_6px_rgba(0,0,0,0.15)] ">
+            <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-pink-purple">
+              <PlayCircle className="h-5 w-5 text-primary" />
+              How to Play
+            </h2>
+          </div>
+
+          <section className="rounded-2xl overflow-hidden transparent">
 
             <VideoSection />
           </section>
@@ -58,7 +72,10 @@ export default function HomePage() {
 
 
         {/* ACTIVITY */}
-        <section>
+        <section className="
+  rounded-3xl
+  p-2
+  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-lg font-bold text-gradient-gold mb-3">
           ⚡ Live Activity
         </h2> */}
@@ -66,30 +83,40 @@ export default function HomePage() {
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             ⚡ Live Activity
           </h2> */}
+          <div className="py-2 mb-4 w-full mx-auto rounded-lg bg-[linear-gradient(135deg,#d4d4d4_0%,#e4e4e4_30%,#ffffff_55%,#e0e0e0_75%,#dcdcdc_100%)]
+    shadow-[0_2px_6px_rgba(0,0,0,0.15)]">
+            <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-pink-purple">
+              <Activity className="h-5 w-5 text-primary" />
+              Live Activity
+            </h2>
+          </div>
 
-          <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-light-header custom-header mb-4">
-            <Activity className="h-5 w-5 text-primary" />
-            Live Activity
-          </h2>
 
 
           <ActivitySlider activities={ACTIVITY_FEED} />
         </section>
 
         {/* LEADERBOARD */}
-        <section>
+        <section className="
+  rounded-3xl
+  p-2
+  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             ⚡ Leaderboard
           </h2> */}
-          <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold mb-4 gradient-light-header custom-header">
-            <Trophy className="h-5 w-5 text-primary" />
-            Leaderboard
-          </h2>
+          <div className="bg-pink-100 py-2 mb-4 w-full mx-auto rounded-lg bg-[linear-gradient(135deg,#d4d4d4_0%,#e4e4e4_30%,#ffffff_55%,#e0e0e0_75%,#dcdcdc_100%)]
+    shadow-[0_2px_6px_rgba(0,0,0,0.15)]">
+            <h2 className="flex items-center justify-center gap-2 text-xl font-extrabold gradient-pink-purple">
+              <Trophy className="h-5 w-5 text-primary" />
+              Leaderboard
+            </h2>
+          </div>
+
           <Leaderboard weeklyUsers={LEADERBOARD_DATA} monthlyUsers={LEADERBOARD_DATA} />
         </section>
 
       </div>
-      <BottomNavBar/>
+      <BottomNavBar />
     </>
 
   );

@@ -168,7 +168,8 @@
         --ring: 330 85% 60%;
 
         /* Pink & Orange Gaming gradients */
-        --gradient-dark: linear-gradient(135deg, hsl(340, 45%, 8%), hsl(25, 60%, 15%));
+        /* --gradient-dark: linear-gradient(135deg, hsl(340, 45%, 8%), hsl(25, 60%, 15%)); */
+        --gradient-dark: linear-gradient(135deg, hsl(340deg 45% 8% / 29%), hsl(25deg 64.54% 9.48% / 74%));
 
         /* Primary Gradients */
         --gradient-pink: linear-gradient(135deg, hsl(330, 85%, 60%), hsl(320, 80%, 50%));
@@ -307,6 +308,15 @@ html {
 
 /* Gaming specific utilities */
 @layer utilities {
+    .gradient-pink-purple {
+        background: linear-gradient(135deg, #ff007e, #6a00d0);
+        /* pink → purple */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
     .custom-heading {
         width: 100%;
         text-align: center;
@@ -392,6 +402,7 @@ html {
     .glass-card {
         /* background: var(--glass-bg); */
         /* background: linear-gradient(90deg, #FF0F7B 0%, #cb007f 100%); */
+        
         background: linear-gradient(13deg, #FF0F7B 0%, #663461 100%);
         border: 1px solid var(--glass-border);
         backdrop-filter: blur(20px);
@@ -399,7 +410,8 @@ html {
 
     .glass-card-light {
         /* background: linear-gradient(90deg, #FF0F7B 0%, #cb007f 100%); */
-        background: linear-gradient(135deg, #91004191 0%, #ab036ca8 100%);
+        /* background: linear-gradient(135deg, #91004191 0%, #ab036ca8 100%); */
+        background: linear-gradient(90deg, #590028 0%, #520034 100%);
         border: 1px solid var(--glass-border);
         backdrop-filter: blur(20px);
     }

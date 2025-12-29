@@ -7,7 +7,7 @@ import { Clock, Users } from "lucide-react"
 export default function BidCard({ bid, background }: { bid: Bid; background: string }) {
   console.log("BidCard background:", background);
   return (
-    <div className={` w-full min-w-0 rounded-2xl p-4 card-shadow transition-smooth hover:glow ${background}`}>
+    <div className={` w-full min-w-0 rounded-2xl p-4 transition-smooth hover:glow ${background}`}>
 
       {/* HEADER */}
       <div className="flex justify-center items-center mb-3">
