@@ -32,7 +32,7 @@ const NOTIFICATIONS = [
   },
   {
     id: 3,
-    bidName: "Bid Premium",
+    bidName: "Bid Daily",
     startDate: "2024-12-30",
     startTime: "02:00 PM",
     endDate: "2024-12-31",
@@ -44,7 +44,7 @@ const NOTIFICATIONS = [
   },
   {
     id: 4,
-    bidName: "Bid Express",
+    bidName: "Bid Daily",
     startDate: "2024-12-29",
     startTime: "12:00 PM",
     endDate: "2024-12-29",
@@ -56,7 +56,7 @@ const NOTIFICATIONS = [
   },
   {
     id: 5,
-    bidName: "Bid Mega",
+    bidName: "Bid Daily",
     startDate: "2024-12-28",
     startTime: "08:00 AM",
     endDate: "2024-12-28",
