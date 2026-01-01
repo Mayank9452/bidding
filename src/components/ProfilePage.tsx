@@ -255,3 +255,184 @@ function InfoRow({ label, value, badge = false }: any) {
         </div>
     );
 }
+
+// import { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { User, Camera, Phone, FileText, LogOut, ChevronRight, Heart, Sparkles, Crown, ArrowRight } from "lucide-react";
+
+// export default function ProfilePage() {
+//     const [isEditingImage, setIsEditingImage] = useState(false);
+//     const [selectedAvatar, setSelectedAvatar] = useState("user123");
+
+//     const avatarOptions = ["user123", "sarah", "alex", "mike", "emma", "john", "lisa", "david"];
+
+//     return (
+//         <div className="min-h-screen bg-[#FFF5F7] pb-24 font-sans">
+//             {/* Soft Pink Mesh Gradient Header */}
+//             <div className="relative h-72 overflow-hidden">
+//                 <div className="absolute inset-0 bg-gradient-to-tr from-rose-400 via-fuchsia-500 to-pink-500" />
+//                 {/* Decorative Blobs */}
+//                 <div className="absolute -top-10 -right-10 w-64 h-64 bg-white/20 rounded-full blur-3xl animate-pulse" />
+//                 <div className="absolute top-20 -left-20 w-48 h-48 bg-pink-300/30 rounded-full blur-2xl" />
+                
+//                 <div className="relative z-10 flex flex-col items-center pt-14">
+//                     <motion.div 
+//                         initial={{ opacity: 0, y: -10 }} 
+//                         animate={{ opacity: 1, y: 0 }}
+//                         className="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full border border-white/30"
+//                     >
+//                         <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em]">Member Profile</span>
+//                     </motion.div>
+//                 </div>
+//             </div>
+
+//             {/* Profile Content Card */}
+//             <div className="relative z-20 -mt-32 px-5 max-w-md mx-auto">
+//                 <div className="bg-white rounded-[3rem] shadow-[0_20px_50px_rgba(255,182,193,0.3)] p-8 border border-pink-50">
+                    
+//                     {/* Avatar with Pink Glow */}
+//                     <div className="flex flex-col items-center -mt-20">
+//                         <div className="relative">
+//                             <motion.div 
+//                                 whileHover={{ scale: 1.05 }}
+//                                 className="w-32 h-32 rounded-[2.5rem] p-1 bg-gradient-to-b from-white to-pink-200 shadow-2xl"
+//                             >
+//                                 <div className="w-full h-full bg-white rounded-[2.3rem] overflow-hidden p-1">
+//                                     <img
+//                                         src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${selectedAvatar}`}
+//                                         alt="Profile"
+//                                         className="w-full h-full object-cover bg-rose-50"
+//                                     />
+//                                 </div>
+//                             </motion.div>
+//                             <motion.button
+//                                 whileTap={{ scale: 0.9 }}
+//                                 onClick={() => setIsEditingImage(true)}
+//                                 className="absolute -bottom-2 -right-2 w-11 h-11 bg-fuchsia-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-fuchsia-200 border-4 border-white"
+//                             >
+//                                 <Camera className="w-5 h-5" />
+//                             </motion.button>
+//                         </div>
+                        
+//                         <h2 className="mt-6 text-2xl font-black text-gray-800 tracking-tight">Sarah Jenkins</h2>
+//                         <div className="mt-2 flex items-center gap-2 text-rose-500 font-semibold text-sm">
+//                             <Sparkles className="w-4 h-4 fill-rose-500" />
+//                             <span>Premium Explorer</span>
+//                         </div>
+//                     </div>
+
+//                     {/* Pink Aesthetic Stats */}
+//                     <div className="grid grid-cols-3 gap-3 mt-10">
+//                         <StatBox label="Bids" value="47" icon={<Heart className="w-4 h-4" />} />
+//                         <StatBox label="Wins" value="12" icon={<Crown className="w-4 h-4" />} />
+//                         <StatBox label="Level" value="Gold" icon={<Sparkles className="w-4 h-4" />} />
+//                     </div>
+
+//                     {/* Action Rows */}
+//                     <div className="mt-10 space-y-4">
+//                         <PinkActionRow 
+//                             icon={<FileText />} 
+//                             title="Terms & Privacy" 
+//                             color="bg-rose-500" 
+//                         />
+//                         <PinkActionRow 
+//                             icon={<LogOut />} 
+//                             title="Sign Out" 
+//                             color="bg-gray-400" 
+//                             isDanger
+//                         />
+//                     </div>
+//                 </div>
+
+//                 {/* Secondary Info Card */}
+//                 <div className="mt-6 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden group">
+//                     <div className="absolute top-0 right-0 p-4 opacity-20 transition-transform group-hover:scale-125">
+//                         <Crown className="w-20 h-20 text-white" />
+//                     </div>
+//                     <div className="relative z-10 text-white">
+//                         <h3 className="font-bold text-lg mb-4">Subscription Status</h3>
+//                         <div className="space-y-3 opacity-90">
+//                             <div className="flex justify-between text-sm">
+//                                 <span>Plan</span>
+//                                 <span className="font-bold">Annual Diamond</span>
+//                             </div>
+//                             <div className="flex justify-between text-sm">
+//                                 <span>Renews</span>
+//                                 <span className="font-bold">12 Oct 2026</span>
+//                             </div>
+//                         </div>
+//                         <button className="mt-6 w-full py-3 bg-white text-rose-600 rounded-2xl font-bold text-sm flex items-center justify-center gap-2">
+//                             Manage Billing <ArrowRight className="w-4 h-4" />
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+
+//             {/* Pink-Themed Bottom Drawer */}
+//             <AnimatePresence>
+//                 {isEditingImage && (
+//                     <>
+//                         <motion.div 
+//                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+//                             className="fixed inset-0 bg-rose-950/40 backdrop-blur-md z-50"
+//                             onClick={() => setIsEditingImage(false)}
+//                         />
+//                         <motion.div 
+//                             initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
+//                             className="fixed bottom-0 left-0 right-0 bg-white rounded-t-[3.5rem] z-50 p-10 shadow-2xl"
+//                         >
+//                             <div className="w-16 h-1.5 bg-rose-100 rounded-full mx-auto mb-8" />
+//                             <h3 className="text-xl font-black text-gray-800 mb-8 text-center">Select New Avatar</h3>
+//                             <div className="grid grid-cols-4 gap-4 mb-10">
+//                                 {avatarOptions.map(avatar => (
+//                                     <button 
+//                                         key={avatar} 
+//                                         onClick={() => setSelectedAvatar(avatar)}
+//                                         className={`rounded-3xl p-1.5 transition-all ${selectedAvatar === avatar ? 'bg-rose-500 scale-110 shadow-lg shadow-rose-200' : 'bg-rose-50'}`}
+//                                     >
+//                                         <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${avatar}`} className="rounded-2xl bg-white" alt="avatar" />
+//                                     </button>
+//                                 ))}
+//                             </div>
+//                             <button 
+//                                 onClick={() => setIsEditingImage(false)}
+//                                 className="w-full py-5 bg-gradient-to-r from-rose-500 to-fuchsia-600 text-white rounded-3xl font-black shadow-xl shadow-rose-200 active:scale-[0.97] transition-transform"
+//                             >
+//                                 Save Changes
+//                             </button>
+//                         </motion.div>
+//                     </>
+//                 )}
+//             </AnimatePresence>
+//         </div>
+//     );
+// }
+
+// function StatBox({ icon, label, value }: any) {
+//     return (
+//         <div className="flex flex-col items-center p-4 rounded-3xl bg-rose-50/50 border border-rose-100/50">
+//             <div className="text-rose-500 mb-1">{icon}</div>
+//             <span className="text-lg font-black text-gray-800">{value}</span>
+//             <span className="text-[9px] text-rose-400 font-bold uppercase tracking-widest">{label}</span>
+//         </div>
+//     );
+// }
+
+// function PinkActionRow({ icon, title, color, isDanger }: any) {
+//     return (
+//         <motion.button 
+//             whileTap={{ scale: 0.98 }}
+//             className={`w-full flex items-center justify-between p-5 rounded-[2rem] group transition-all ${
+//                 isDanger ? 'bg-gray-50' : 'bg-rose-50 hover:bg-rose-100'
+//             }`}
+//         >
+//             <div className="flex items-center gap-4">
+//                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-lg ${color}`}>
+//                     {icon}
+//                 </div>
+//                 <span className={`font-bold text-sm ${isDanger ? 'text-gray-500' : 'text-gray-800'}`}>{title}</span>
+//             </div>
+//             <ChevronRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${isDanger ? 'text-gray-300' : 'text-rose-300'}`} />
+//         </motion.button>
+//     );
+// }
