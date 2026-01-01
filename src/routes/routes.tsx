@@ -1,8 +1,28 @@
+import DetailsPage from "@/components/DetailsPage";
+import LeaderboardPageNew from "@/components/LeaderboardPageNew";
+import NotificationPage from "@/components/NotificationPage";
+import ProfilePage from "@/components/ProfilePage";
 import HomePage from "@/pages/HomePage";
 
 
 const routes = [
   { path: "/", element: <HomePage /> },
+  {
+    path: "/details",
+    element: <DetailsPage />,
+  },
+  {
+    path: "/leaderboard",
+    element: <LeaderboardPageNew />,
+  },
+  {
+    path: "/notification",
+    element: <NotificationPage />,
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage />,
+  }
   // { path: "/dashboard", element: <Index /> },
   // { path: "/games", element: <Games /> },
   // { path: "/games/:category", element: <CategoryWiseGames /> },

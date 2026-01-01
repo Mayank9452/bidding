@@ -27,40 +27,111 @@
 //   );
 // }
 
-import type { Activity } from "@/types"
-import { c } from "node_modules/framer-motion/dist/types.d-Cjd591yU"
+// import type { Activity } from "@/types"
+// import { c } from "node_modules/framer-motion/dist/types.d-Cjd591yU"
 
-export default function ActivitySlider({
-  activities,
-}: {
-  activities: Activity[]
-}) {
-  // const gradientBackground = ["gradient-pink-yellow","gradient-pink-violet"];
-  // const gradientBackground = ["bg-gradient-to-r from-pink-500 via-yellow-500 to-yellow-300","bg-gradient-to-r from-pink-500 via-violet-500 to-violet-300"];
-  const gradientBackground = ["gradient-purple", "gradient-green", "gradient-pink-dark", "gradient-casino"];
+// export default function ActivitySlider({
+//   activities,
+// }: {
+//   activities: Activity[]
+// }) {
+//   // const gradientBackground = ["gradient-pink-yellow","gradient-pink-violet"];
+//   // const gradientBackground = ["bg-gradient-to-r from-pink-500 via-yellow-500 to-yellow-300","bg-gradient-to-r from-pink-500 via-violet-500 to-violet-300"];
+//   const gradientBackground = ["gradient-purple", "gradient-green", "gradient-pink-dark", "gradient-casino"];
+
+//   return (
+//     <div className="relative overflow-hidden">
+//       <div className="flex gap-4 animate-slide-right">
+//         {[...activities, ...activities].map((activity, index) => (
+//           <div
+//             key={`${activity.id}-${index}`}
+//             className={` rounded-xl p-4 min-w-[240px] card-shadow ${gradientBackground[index % gradientBackground.length]}`}
+//           >
+//             {/* <p className="text-xs font-medium leading-snug">
+//               {activity.message}
+//             </p> */}
+
+//             <h3 className="text-sm font-bold ">
+//               {activity.message}
+//             </h3>
+
+//             <span className="text-[10px] text-white-foreground mt-2 block">
+//               {activity.time}
+//             </span>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+
+"use client";
+
+import React from "react";
+import { Zap, Timer } from "lucide-react";
+import type { Activity } from "@/types";
+
+interface ActivitySliderProps {
+  activities: Activity[];
+}
+
+export default function ActivitySlider({ activities }: ActivitySliderProps) {
+  const gradientStyles = [
+    "from-indigo-600 to-purple-600",
+    "from-emerald-500 to-blue-600",
+    "from-rose-500 to-orange-500",
+    "from-violet-600 to-pink-500",
+  ];
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="flex gap-4 animate-slide-right">
-        {[...activities, ...activities].map((activity, index) => (
-          <div
-            key={`${activity.id}-${index}`}
-            className={` rounded-xl p-4 min-w-[240px] card-shadow ${gradientBackground[index % gradientBackground.length]}`}
-          >
-            {/* <p className="text-xs font-medium leading-snug">
-              {activity.message}
-            </p> */}
+    <div className="relative w-full overflow-hidden py-2">
+      {/* Edge Fading Masks */}
+      {/* <div className="absolute inset-y-0 left-0 w-16 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" /> */}
 
-            <h3 className="text-sm font-bold ">
-              {activity.message}
-            </h3>
+      {/* ANIMATION NOTE: 
+          We use a standard CSS animation defined in your global CSS 
+          or via Tailwind's arbitrary class: animate-[slide-right_30s_linear_infinite]
+      */}
+      <div className="flex gap-4 animate-[slide-right_30s_linear_infinite] whitespace-nowrap px-4 w-max">
+        {[...activities, ...activities].map((activity, index) => {
+          const gradientClass = gradientStyles[index % gradientStyles.length];
+          
+          return (
+            <div
+              key={`${activity.id}-${index}`}
+              className={`relative min-w-[260px] rounded-2xl p-4 shadow-lg border border-white/20 overflow-hidden bg-gradient-to-br ${gradientClass} active:scale-95 transition-transform`}
+            >
+              {/* Background Decorative Icon */}
+              <Zap className="absolute -right-2 -bottom-2 w-16 h-16 text-white/10 -rotate-12" />
 
-            <span className="text-[10px] text-white-foreground mt-2 block">
-              {activity.time}
-            </span>
-          </div>
-        ))}
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">
+                    Live
+                  </span>
+                </div>
+
+                <h3 className="text-sm font-bold text-white leading-tight whitespace-normal line-clamp-2">
+                  {activity.message}
+                </h3>
+
+                <div className="flex items-center gap-1.5 mt-3 pt-2 border-t border-white/10">
+                  <Timer className="w-3 h-3 text-white/60" />
+                  <span className="text-[10px] font-bold text-white/80">
+                    {activity.time}
+                  </span>
+                </div>
+              </div>
+
+              {/* Shine Layer */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+            </div>
+          );
+        })}
       </div>
     </div>
-  )
+  );
 }

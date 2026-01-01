@@ -9,10 +9,10 @@ export interface Bid {
   title: string;
   description: string;
   currentBid: number;
-  startPrice: number;
+  // startPrice: number;
   status: BidStatus;
-  endTime: string; // ISO date
-  image?: string;
+  // endTime: string; // ISO date
+  // image?: string;
 }
 
 // =====================

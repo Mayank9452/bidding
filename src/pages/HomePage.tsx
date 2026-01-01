@@ -11,12 +11,14 @@ import {
   Trophy,
 } from "lucide-react";
 import { BottomNavBar } from "@/components/BottomNavBar";
+import LeaderboardNew from "@/components/LeaderboardNew";
+import BidCardDemo from "@/components/BidCardDemo";
 const gradientBackground = ["gradient-casino", "gradient-dark", "gradient-purple", "gradient-green-dark", "gradient-pink-dark", "gradient-blue"];
 export default function HomePage() {
   return (
     <>
       <TopBar />
-      <div className="mobile-container px-2 py-2 pb-2  space-y-10">
+      <div className="mobile-container py-2 pb-2  space-y-2">
 
 
 
@@ -24,7 +26,7 @@ export default function HomePage() {
         <section className="
   rounded-3xl
   p-2
-  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
+  " style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             🔥 Live Auctions
           </h2> */}
@@ -39,10 +41,11 @@ export default function HomePage() {
           </div>
 
           {/* TWO BIDS PER ROW */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {BIDS_DATA.map((bid, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
+            {/* {BIDS_DATA.map((bid, index) => (
               <BidCard key={bid.id} bid={bid} background={gradientBackground[(index) % gradientBackground.length]} />
-            ))}
+            ))} */}
+            <BidCardDemo />
           </div>
         </section>
 
@@ -50,7 +53,7 @@ export default function HomePage() {
         <section className="
   rounded-3xl
   p-2
-  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
+" style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             <PlayCircle className="h-5 w-5 text-primary" />
             ⚡ How to Play
@@ -75,7 +78,7 @@ export default function HomePage() {
         <section className="
   rounded-3xl
   p-2
-  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
+  " style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-lg font-bold text-gradient-gold mb-3">
           ⚡ Live Activity
         </h2> */}
@@ -100,7 +103,7 @@ export default function HomePage() {
         <section className="
   rounded-3xl
   p-2
-  shadow-[0_10px_30px_rgba(0,0,0,0.58)]" style={{opacity: 1, transform: "none"}}>
+  " style={{opacity: 1, transform: "none"}}>
           {/* <h2 className="text-xl text-center font-extrabold text-gradient-casino mb-4">
             ⚡ Leaderboard
           </h2> */}
@@ -112,7 +115,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <Leaderboard weeklyUsers={LEADERBOARD_DATA} monthlyUsers={LEADERBOARD_DATA} />
+          <LeaderboardNew weeklyUsers={LEADERBOARD_DATA} monthlyUsers={LEADERBOARD_DATA} />
         </section>
 
       </div>

@@ -14,7 +14,7 @@ export function TopBar({ comingFrom = "spin-the-wheel", remainingJackpot = 0 }: 
 
   return (
     <div className="sticky -top-[1px] z-[999] w-full">
-      <div className="glass-card-light border-primary/20 px-4 py-2 rounded-b-2xl" style={{border: "none", borderBottom: "1px solid hsl(240 6% 20%)"}}>
+      <div className=" bg-gradient-to-r from-pink-600 to-rose-600 border-primary/20 px-4 py-2 rounded-b-2xl" style={{border: "none", borderBottom: "1px solid hsl(240 6% 20%)"}}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer">
             <div className="p-1 rounded-lg gradient-magic">
