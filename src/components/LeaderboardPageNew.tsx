@@ -6,18 +6,18 @@ import { TopBar } from "./TopBar";
 
 // Mock data
 const MOCK_USERS = [
-  { id: 1, name: "Alex Johnson", score: 15420, bids: 234, avatar: "Alex", tier: "diamond", streak: 12 },
-  { id: 2, name: "Sarah Chen", score: 14890, bids: 198, avatar: "Sarah", tier: "platinum", streak: 8 },
-  { id: 3, name: "Mike Wilson", score: 13750, bids: 187, avatar: "Mike", tier: "gold", streak: 6 },
-  { id: 4, name: "Emma Davis", score: 12340, bids: 165, avatar: "Emma", tier: "gold", streak: 5 },
-  { id: 5, name: "James Brown", score: 11890, bids: 156, avatar: "James", tier: "silver", streak: 4 },
-  { id: 6, name: "Lisa Anderson", score: 10560, bids: 142, avatar: "Lisa", tier: "silver", streak: 7 },
-  { id: 7, name: "David Lee", score: 9870, bids: 134, avatar: "David", tier: "silver", streak: 3 },
-  { id: 8, name: "Sophie Martin", score: 8920, bids: 128, avatar: "Sophie", tier: "bronze", streak: 2 },
-  { id: 9, name: "Chris Taylor", score: 8450, bids: 119, avatar: "Chris", tier: "bronze", streak: 5 },
-  { id: 10, name: "Anna White", score: 7890, bids: 112, avatar: "Anna", tier: "bronze", streak: 3 },
-  { id: 11, name: "Tom Harris", score: 7340, bids: 105, avatar: "Tom", tier: "bronze", streak: 2 },
-  { id: 12, name: "Kate Moore", score: 6890, bids: 98, avatar: "Kate", tier: "bronze", streak: 1 },
+  { id: 1, name: "Abhishek", score: 15420, bids: 234, avatar: "Alex", tier: "diamond", streak: 12 },
+  { id: 2, name: "Anirudh", score: 14890, bids: 198, avatar: "Sarah", tier: "platinum", streak: 8 },
+  { id: 3, name: "Akash", score: 13750, bids: 187, avatar: "Mike", tier: "gold", streak: 6 },
+  { id: 4, name: "Amish", score: 12340, bids: 165, avatar: "Emma", tier: "gold", streak: 5 },
+  { id: 5, name: "Jakie", score: 11890, bids: 156, avatar: "James", tier: "silver", streak: 4 },
+  { id: 6, name: "Bhibhav", score: 10560, bids: 142, avatar: "Lisa", tier: "silver", streak: 7 },
+  { id: 7, name: "Rahul", score: 9870, bids: 134, avatar: "David", tier: "silver", streak: 3 },
+  { id: 8, name: "Ranbir", score: 8920, bids: 128, avatar: "Sophie", tier: "bronze", streak: 2 },
+  { id: 9, name: "Sammer", score: 8450, bids: 119, avatar: "Chris", tier: "bronze", streak: 5 },
+  { id: 10, name: "Rana Singh", score: 7890, bids: 112, avatar: "Anna", tier: "bronze", streak: 3 },
+  { id: 11, name: "Harshvardhan", score: 7340, bids: 105, avatar: "Tom", tier: "bronze", streak: 2 },
+  { id: 12, name: "Ashish", score: 6890, bids: 98, avatar: "Kate", tier: "bronze", streak: 1 },
 ];
 
 const getTierColor = (tier: string) => {
@@ -199,10 +199,10 @@ export default function LeaderboardPageNew() {
                         className="overflow-hidden"
                       >
                         <div className="px-3 py-2.5 bg-gradient-to-r from-violet-50 to-purple-50 rounded-b-xl border-x border-b border-gray-100 -mt-2 pt-3">
-                          <div className="grid grid-cols-3 gap-2">
+                          <div className="grid grid-cols-2 gap-2 mx-auto">
                             <StatCard icon={<Star className="w-3.5 h-3.5" />} label="Wins" value="28" />
                             <StatCard icon={<Zap className="w-3.5 h-3.5" />} label="Win Rate" value="64%" />
-                            <StatCard icon={<Award className="w-3.5 h-3.5" />} label="Tier" value={user.tier.slice(0, 4)} />
+                            {/* <StatCard icon={<Award className="w-3.5 h-3.5" />} label="Tier" value={user.tier.slice(0, 4)} /> */}
                           </div>
                         </div>
                       </motion.div>
